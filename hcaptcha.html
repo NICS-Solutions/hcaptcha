@@ -1,22 +1,35 @@
 <html>
-  <head>
-    <title>hCaptcha</title>
-    <script src="https://hcaptcha.com/1/api.js" async defer></script>
-  </head>
-  <body style='background-color: aqua;'>
-    <div style='height: 60px;'></div>
-    <form action="?" method="POST">
-      <div class="h-captcha" 
-        data-sitekey="c3841789-90cd-44bb-8cc2-d44ac13bf2b6"
-        data-callback="captchaCallback"></div>
 
-    </form>
-    <script>
-      function captchaCallback(response) {
-        if (typeof Captcha!=="undefined") {
-          Captcha.postMessage(response);
-        }
+<head>
+  <title>hCaptcha</title>
+  <script src="https://hcaptcha.com/1/api.js" async defer></script>
+</head>
+
+<style>
+  .h-captcha{
+    position: relative;
+    top: 300px;
+  }
+</style>
+
+<body style='background-color: aqua;'>
+  <center>
+    <div style='height: 500px;'>
+      <form action="?" method="POST" id="form">
+        <div class="h-captcha" data-sitekey="c3841789-90cd-44bb-8cc2-d44ac13bf2b6" data-callback="captchaCallback">
+        </div>
+        <!-- doesn't work since captcha is in an iframe -->
+      </form>
+    </div>
+  </center>
+
+  <script>
+    function captchaCallback(response) {
+      if (typeof Captcha !== "undefined") {
+        Captcha.postMessage(response);
       }
-    </script>
-  </body>
+    }
+  </script>
+</body>
+
 </html>
