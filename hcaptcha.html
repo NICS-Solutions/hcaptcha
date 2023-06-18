@@ -1,7 +1,9 @@
 <html>
 
 <head>
-  <title>hCaptcha</title>
+  <title>eBitcoinics hcaptcha</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
   <script src="https://hcaptcha.com/1/api.js" async defer></script>
 </head>
 
@@ -12,11 +14,11 @@
   }
 </style>
 
-<body style='background-color: aqua;'>
+<body class="container" style='background-color: 0xFFe7eaf3;'>
   <center>
     <div style='height: 500px;'>
       <form action="?" method="POST" id="form">
-        <div class="h-captcha" data-sitekey="c3841789-90cd-44bb-8cc2-d44ac13bf2b6" data-callback="captchaCallback">
+        <div class="container h-captcha" data-sitekey="c3841789-90cd-44bb-8cc2-d44ac13bf2b6" data-callback="captchaCallback">
         </div>
         <!-- doesn't work since captcha is in an iframe -->
       </form>
